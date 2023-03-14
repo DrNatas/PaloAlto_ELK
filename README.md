@@ -29,9 +29,11 @@ It utilises the free Elastic Stack from [www.elastic.co](https://www.elastic.co/
 * Threat/URL
 * Config
 * System
+* UserID
+* GlobalProtect
+* CORRELATION
 
 A full suite of visualisations and dashboards is included
-  
 
 **Elastic Stack**
 
@@ -51,7 +53,7 @@ Much of this project was created based on the following pages from awesome peopl
 
 ## Tutorial
 
-This project was built on Ubuntu 16.04 LTS, using the latest Elastic Stack 6.1 (with integrated syslog server) and a PA-220 Firewall.
+This project was built on Docker containers, using the latest Elastic Stack 8.6.2 (with integrated syslog server) and a PA-220/PA-5220 Firewall.
 nginx was used to secure authentication to Kibana via reverse-proxy
 
 For those unfamilar with any part of this technology stack, I have created a full tutorial on installing & configuring Elastic Stack, including security the platform & installing the visualisations. :blue_book: The tutorial is [available here](https://github.com/sm-biz/paloalto-elasticstack-viz/wiki)
@@ -72,6 +74,7 @@ Otherwise, if you're comfortable with the technology stack mentioned above, then
   - ElasticSearch
   - Kibana
   - LogStash
+
 - Edit 'PAN-OS.conf'
   - **Set your timezone correctly** *(Very important)*
   - Copy the file into your **conf** directory. For Ubuntu/Debian this is "/etc/logstash/conf.d/", other directories are [available here](https://www.elastic.co/guide/en/logstash/current/dir-layout.html)
