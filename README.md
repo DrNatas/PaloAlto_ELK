@@ -94,10 +94,14 @@ curl -XPUT http://<your-elasticsearch-server>:9200/_template/panos-threat*?prett
   - After committing to set your syslog server, you will need to do another committ (any change) to actually send a config log message
   
 - Once the data is rolling, login to Kibana and create new index patterns, all with a Time Filter field of '@timestamp'
-  - panos-traffic-*
-  - panos-threat-*
-  - panos-system-*
-  - panos-config-*
+ - "panos-traffic-%{+YYYY.MM.dd}"
+ - "panos-threat-%{+YYYY.MM.dd}"
+ - "panos-config-%{+YYYY.MM.dd}"
+ - "panos-system-%{+YYYY.MM.dd}"
+ - "panos-hip-%{+YYYY.MM.dd}"
+ - "panos-hip-%{+YYYY.MM.dd}"
+ - "panos-hip-%{+YYYY.MM.dd}"
+ - "panos-undefined
 
 - And lastly, import the saved object files (in this orders)
   - searches-base.json
@@ -109,5 +113,5 @@ And that's it! Once you have some logs in the system, you should see the dashboa
  
 ## References
 
-* [Elastic Stack Documentation:](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/index.html) For more information on the Elastic Stack, including the official install guides
+* [Elastic Stack Documentation:](https://www.elastic.co/guide/en/elasticsearch/reference/8.6/index.html) For more information on the Elastic Stack, including the official install guides
 * [Basics of Visualisation:](https://www.elastic.co/guide/en/kibana/6.1/tutorial-visualizing.html) To get started making your own visualisations and dashboards
