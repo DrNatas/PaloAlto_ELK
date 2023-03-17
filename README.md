@@ -54,7 +54,6 @@ Much of this project was created based on the following pages from awesome peopl
 ## Tutorial
 
 This project was built on Docker containers, using the latest Elastic Stack 8.6.2 (with integrated syslog server) and a PA-220/PA-5220 Firewall.
-nginx was used to secure authentication to Kibana via reverse-proxy
 
 For those unfamilar with any part of this technology stack, I have created a full tutorial on installing & configuring Elastic Stack, including security the platform & installing the visualisations. :blue_book: The tutorial is [available here](https://github.com/sm-biz/paloalto-elasticstack-viz/wiki)
 
@@ -70,7 +69,7 @@ Otherwise, if you're comfortable with the technology stack mentioned above, then
   - visualisations-base.json
   - dashboards-base.json
 
-- Install Elastic Stack 6.1
+- Install Elastic Stack 8.6.2
   - ElasticSearch
   - Kibana
   - LogStash
@@ -94,7 +93,7 @@ curl -XPUT http://<your-elasticsearch-server>:9200/_template/panos-threat*?prett
   - You may have to trigger a threat log entry. Follow [this guide](https://live.paloaltonetworks.com/t5/Management-Articles/How-to-Test-Threat-Prevention-Using-a-Web-Browser/ta-p/62073) from Palo Alto for instructions
   - After committing to set your syslog server, you will need to do another committ (any change) to actually send a config log message
   
-- Once the data is rolling, login to Kibana and create the 4 new index patterns, all with a Time Filter field of '@timestamp'
+- Once the data is rolling, login to Kibana and create new index patterns, all with a Time Filter field of '@timestamp'
   - panos-traffic-*
   - panos-threat-*
   - panos-system-*
