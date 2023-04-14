@@ -99,8 +99,9 @@ curl -XPUT http://<your-elasticsearch-server>:9200/_template/panos-threat*?prett
  - "panos-config-%{+YYYY.MM.dd}"
  - "panos-system-%{+YYYY.MM.dd}"
  - "panos-hip-%{+YYYY.MM.dd}"
- - "panos-hip-%{+YYYY.MM.dd}"
- - "panos-hip-%{+YYYY.MM.dd}"
+ - "panos-userid-%{+YYYY.MM.dd}"
+ - "panos-correlation-%{+YYYY.MM.dd}"
+ - "panos-global_protect-%{+YYYY.MM.dd}"
  - "panos-undefined
 
 - And lastly, import the saved object files (in this orders)
